@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+
+        }
+        html, body, svg {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        .nvd3 {
+            margin-bottom: 50px;
+        }
+
+        pre {
+            padding: 20px;
+            background-color: #ddd;
+            display: inline-block;
+        }
+
+        /* --- Sankey chart styles --- */
+
+        .node rect {
+            cursor: move;
+            fill-opacity: .9;
+            shape-rendering: crispEdges;
+        }
+
+        .node text {
+            pointer-events: none;
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        .link {
+            fill: none;
+            stroke: #000;
+            stroke-opacity: .2;
+        }
+
+        .link:hover {
+            stroke-opacity: .5;
+        }
+
+    </style>
+</head>
+<body>
+<h3>NVD3 Format Sankey Chart</h3>
+ 
+<pre>
+.node rect {
+    cursor: move;
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+}
+
+.node text {
+    pointer-events: none;
+    
+	{
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.link:hover {
+    stroke-opacity: .5;
+}
+</pre>
+
+<div id="sankey-chart-simple" class="nvd3"></div>
+<div id="sankey-chart-advanced" class="nvd3"></div>
+
+<script>
+    var width = 800,
+    height = 600;
+    d3.csv("river3.csv", function(error, data) {
+ 
+                };
+    nv.addGraph(function() {
+        var chart = nv.models.sankeyChart()
+            .width(width)
+            .height(height)
+            .units('elephants');
+
+        d3.select('#sankey-chart-simple')
+            .attr('width', width)
+            .attr('height', height)
+            .datum(data)
+            .call(chart);
+
+        return chart;
+    });
+
+    nv.addGraph(function() {
+        var units = 'ducks';
+        var chart = nv.models.sankeyChart()
+            .width(width)
+            .height(height)
+            .format(function(d) {
+                return formatNumber(d) + ' ' + units;
+            })
+            .linkTitle(function(d){
+                return d.source.name + ' ----> ' + d.target.name + '\n' + d.value + ' ' + units;
+            })
+            .nodeStyle({
+                title: function(d){
+                    return d.name + ': ' + d.value + ' ' + units;
+                },
+                fillColor: function(d){
+                    return d3.rgb(d.color).brighter(2);
+                },
+                strokeColor: function(d){
+                    return d3.rgb(d.color).darker(2);
+                }
+            })
+            .nodeWidth(100)
+            .nodePadding(200)
+            .units('ducks')
+            .center(function(node){
+                return node.dy
+            });
+
+        d3.select('#sankey-chart-advanced')
+            .attr('width', width)
+            .attr('height', height)
+            .datum(data)
+            .call(chart);
+
+        return chart;
+    });
+</script>
+<h3>RAW Embed</h3>
+<svg width="848" height="520" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,10)"><g><path class="link" d="M5,148C424,148 424,158 843,158" style="stroke-width: 92; fill: none; stroke: rgb(191, 105, 105); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,250C424,250 424,250 843,250" style="stroke-width: 92; fill: none; stroke: rgb(174, 191, 105); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,352C424,352 424,342 843,342" style="stroke-width: 92; fill: none; stroke: rgb(105, 191, 139); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,454C424,454 424,434 843,434" style="stroke-width: 92; fill: none; stroke: rgb(105, 139, 191); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,46C424,46 424,66 843,66" style="stroke-width: 92; fill: none; stroke: rgb(37, 37, 37); stroke-opacity: 0.4;"><title>1</title></path></g><g><g class="node" transform="translate(843,20)"><rect height="460" width="5" style="fill: rgb(102, 102, 102);"><title>RIVER BIRCH
+5</title></rect><text x="-6" y="230" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">RIVER BIRCH</text></g><g class="node" transform="translate(0,0)"><rect height="92" width="5"><title>* STORAGE
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">* STORAGE</text></g><g class="node" transform="translate(0,102)"><rect height="92" width="5"><title>ARK-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">ARK-CNG</text></g><g class="node" transform="translate(0,204)"><rect height="92" width="5"><title>MTS-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">MTS-CNG</text></g><g class="node" transform="translate(0,306)"><rect height="92" width="5"><title>QFC-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">QFC-CNG</text></g><g class="node" transform="translate(0,408)"><rect height="92" width="5"><title>ST-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">ST-CNG</text></g></g></g></svg>
+<h3>Raw Embed 2</h3>
+<svg width="848" height="520" xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="translate(0,10)"><g><path class="link" d="M5,148C424,148 424,158 843,158" style="stroke-width: 92; fill: none; stroke: rgb(191, 105, 105); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,250C424,250 424,250 843,250" style="stroke-width: 92; fill: none; stroke: rgb(174, 191, 105); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,352C424,352 424,342 843,342" style="stroke-width: 92; fill: none; stroke: rgb(105, 191, 139); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,454C424,454 424,434 843,434" style="stroke-width: 92; fill: none; stroke: rgb(105, 139, 191); stroke-opacity: 0.4;"><title>1</title></path><path class="link" d="M5,46C424,46 424,66 843,66" style="stroke-width: 92; fill: none; stroke: rgb(37, 37, 37); stroke-opacity: 0.4;"><title>1</title></path></g><g><g class="node" transform="translate(843,20)"><rect height="460" width="5" style="fill: rgb(102, 102, 102);"><title>RIVER BIRCH
+5</title></rect><text x="-6" y="230" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">RIVER BIRCH</text></g><g class="node" transform="translate(0,0)"><rect height="92" width="5"><title>* STORAGE
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">* STORAGE</text></g><g class="node" transform="translate(0,102)"><rect height="92" width="5"><title>ARK-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">ARK-CNG</text></g><g class="node" transform="translate(0,204)"><rect height="92" width="5"><title>MTS-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">MTS-CNG</text></g><g class="node" transform="translate(0,306)"><rect height="92" width="5"><title>QFC-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">QFC-CNG</text></g><g class="node" transform="translate(0,408)"><rect height="92" width="5"><title>ST-CNG
+1</title></rect><text x="11" y="46" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">ST-CNG</text></g></g></g></svg>
+</body>
+</html>
