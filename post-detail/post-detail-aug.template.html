@@ -5,6 +5,8 @@
   <img ng-src="{{img}}" class="post"
       ng-class="{selected: img === $ctrl.mainImageUrl}"
       ng-repeat="img in $ctrl.post.images" />
+      <div ng-repeat="d in $ctrl.data.post"> <p>{{d}}</p> </div>
+   </div>
 </div>
 
 <h1>{{$ctrl.post.title}}</h1>

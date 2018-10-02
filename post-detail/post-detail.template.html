@@ -2,8 +2,10 @@
   <img ng-src="{{img}}" class="post"
       ng-class="{selected: img === $ctrl.mainImageUrl}"
       ng-repeat="img in $ctrl.post.images" />
-</div>
+  
 
+
+</div> 
 <h1>{{$ctrl.post.title}}</h1>
 
 <p>{{$ctrl.post.description}}</p>
@@ -11,6 +13,8 @@
 <ul class="post-thumbs">
   <li ng-repeat="img in $ctrl.post.images">
     <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+    
+    <div ng-repeat="d in $ctrl.data.post"> <p>{{d}}</p> </div>
   </li>
 </ul>
 

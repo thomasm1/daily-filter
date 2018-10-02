@@ -6,7 +6,9 @@ angular.module('postcatApp', [
   'ngRoute',
   'core',
   'postDetail',
-  'postList'
+  'postList',
+  'dTech',
+  'modalFormApp'
 ]);
 
 angular.
@@ -16,6 +18,9 @@ angular.
       $locationProvider.html5Mode(true);
 
       $routeProvider.
+      when('/dailytech', {
+        template: '<d-tech></d-tech>'
+      }).
         when('/posts', {
           template: '<post-list></post-list>'
         }).

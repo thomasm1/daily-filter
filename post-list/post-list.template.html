@@ -2,6 +2,9 @@
  
 </style>
 <div class="container-fluid">
+
+
+
   <div class="row">
     <div class="col-md-2">
       <!--Sidebar content-->
@@ -14,15 +17,27 @@
       <br />
       <p  >
         Sort by:
-        <select   ng-model="$ctrl.orderProp">
-          
+        <select   ng-model="$ctrl.orderProp"> 
             <option class="blue"  value="did">Date</option>
           <option class="blue"  value="title">Title</option>
           <option class="blue"  value="cat3">Category</option>
         </select>
       </p>
 <br />
-    </div>
+    </div> 
+    
+<div ng-app="modalFormApp">
+  <div class="container" >
+      <div class="col-sm-8 col-sm-offset-2"> 
+          <div ng-controller="modalAccountFormController">
+              <div class="page-body">
+                  <button class="btn btn-primary" ng-click="showForm()">Write!  </button>
+              </div>
+          </div>
+      </div>
+  </div> 
+</div>
+
     <div class="col-md-10">
       <!--Body content-->
 
