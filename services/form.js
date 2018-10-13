@@ -1,3 +1,5 @@
+'use static';
+
 var app = angular.module("modalFormApp", ['ui.bootstrap']);
 app.controller("modalAccountFormController", ['$scope', '$modal', '$log',
 
@@ -24,20 +26,22 @@ app.controller("modalAccountFormController", ['$scope', '$modal', '$log',
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
+
+
+        var ModalInstanceCtrl = function ($scope, $modalInstance, userForm) {
+            $scope.form = {}
+            $scope.submitForm = function () {
+                if ($scope.form.userForm.$valid) {
+                    console.log('user form is in scope');
+                    $modalInstance.close('closed');
+                } else {
+                    console.log('userform is not in scope');
+                }
+            };
+        
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
+            };
+        };
+
             }]);
-
-var ModalInstanceCtrl = function ($scope, $modalInstance, userForm) {
-    $scope.form = {}
-    $scope.submitForm = function () {
-        if ($scope.form.userForm.$valid) {
-            console.log('user form is in scope');
-            $modalInstance.close('closed');
-        } else {
-            console.log('userform is not in scope');
-        }
-    };
-
-    $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-    };
-};

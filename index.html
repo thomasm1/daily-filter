@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <!--  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   -->
+    <link rel="stylesheet" href="core/dtech/dtech.css" />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="app.animations.css" />
 
@@ -48,6 +49,7 @@
       </style>
     <script src="services/form.js"></script>
     <script src="app.module.js"></script> 
+    <script src="core/dtech/dtech.js"></script>
     <script src="app.animations.js"></script>
     <script src="core/core.module.js"></script>
     <script src="core/checkmark/checkmark.filter.js"></script>
@@ -58,7 +60,6 @@
     <script src="post-detail/post-detail.module.js"></script>
     <script src="post-detail/post-detail.component.js"></script>
     
-    <script src="dtech/app.js"></script>
     
   <base href="/" >
   </head>
@@ -72,6 +73,7 @@
             <span class="tagline pull-left">{{appDetails.tagline}}</span>
             <div class="nav-wrapper pull-left">
                 <ul class="nav nav-pills">
+                  <li ng-class="{active: nav.isActive('/posts')}"><a href="/posts">Blog Posts</a></li>
                     <li ng-class="{active: nav.isActive('/books')}"><a href="/books">Daily Tech</a></li> 
                     <li ng-class="{active: nav.isActive('/poster')}"><a href="/poster">Read Posts</a></li>
                 </ul>
@@ -81,10 +83,7 @@
 		 
 		<div ng-view class="container-fluid"></div>
 		
-      <ng-include src="views/nav.html"></ng-include>
-      
-   
-      <div ng-view class="view-frame"></div>
+    
     </div>
 
   </body>

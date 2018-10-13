@@ -17,16 +17,24 @@ angular.
     function config($locationProvider, $routeProvider) {
       $locationProvider.html5Mode(true);
 
-      $routeProvider.
-      when('/dailytech', {
+      $routeProvider	 
+      .when('/', {
+        template: '<post-list></post-list>'
+      })
+      .when("/books", {
+        templateUrl: "views/book-list.html",
+        controller: "BookListCtrl"
+      }) 
+      .when("/poster", {
+        templateUrl: "views/post-list.html",
+        controller: "PostListCtrl"
+      }) 
+      .when('/d-tech', {
         template: '<d-tech></d-tech>'
-      }).
-        when('/posts', {
-          template: '<post-list></post-list>'
-        }).
+      }). 
         when('/posts/:postId', {
           template: '<post-detail></post-detail>'
         }).
-        otherwise('/posts');
+        otherwise('/');
     }
   ]);
