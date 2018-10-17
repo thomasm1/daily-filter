@@ -8,7 +8,8 @@ angular.module('postcatApp', [
   'postDetail',
   'postList',
   'dTech',
-  'modalFormApp'
+  'modalFormApp',
+  'XMLH'
 ]);
 
 angular.
@@ -21,6 +22,10 @@ angular.
       .when('/', {
         template: '<post-list></post-list>'
       })
+      .when("/books", {
+        templateUrl: "views/book-list.html",
+        controller: "BookListCtrl"
+      }) 
       .when("/books", {
         templateUrl: "views/book-list.html",
         controller: "BookListCtrl"

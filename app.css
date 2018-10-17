@@ -95,3 +95,27 @@ h1 {
 .blue {
   color:blue;
 }
+#readers  {
+  background-color:rgba(40, 54, 255, 0.247);
+  width:325px;
+  min-width:200px;
+  max-height:500px; 
+  padding:5px; 
+  overflow-y:scroll;
+
+}  
+#readers h1,h2,h3,h4,h5 {
+text-align:center;
+}
+#readerz-div {
+  background-color:rgba(61, 70, 206, 0.247);
+  width:80%;
+  min-width:350px; 
+  font-size:1rem;
+  max-height:500px;
+   height: 0px;
+  padding:5px;
+  border-radius:10px; 
+  overflow-y:scroll;
+
+} 

@@ -1,6 +1,6 @@
 {
-  "name": "jasmine-karma-mock",
-  "version": "1.0.0",
+  "name": "daily-blog-filter",
+  "version": "1.1.0",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -14,6 +14,7 @@
   "devDependencies": {
     "bower": "^1.8.4",
     "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
     "jasmine-core": "^3.2.1",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -22,5 +23,13 @@
     "karma-phantomjs-launcher": "^1.0.4"
   },
   "dependencies": {},
-  "description": ""
+  "description": "* Text Content Generator - http://www.lipsum.com * Favicon Generator - http://tools.dynamicdrive.com/favicon\t\t * Data Generator - https://mockaroo.com/\t\t\t\t\t\t * Mobile Mockup Generator - https://mockuphone.com * Logo Generator - https://www.logaster.com * UUID Generator - https://www.uuidgenerator.net/ * Hash Generator - https://passwordsgenerator.net/sha256-hash-generator/ * Ultimate Code Generator - https://webcode.tools/",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/thomasm1/daily-filter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thomasm1/daily-filter/issues"
+  },
+  "homepage": "https://github.com/thomasm1/daily-filter#readme"
 }

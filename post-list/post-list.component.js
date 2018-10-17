@@ -9,6 +9,8 @@ angular.
       function postListController(Post) {
         this.posts = Post.query();
         this.orderProp = 'cat3';
+
+
       }
     ]
   });
