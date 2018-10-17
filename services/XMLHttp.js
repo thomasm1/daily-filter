@@ -1,13 +1,8 @@
-'use static';
-
-var app = angular.module("XMLHttp", [ ]);
-app.controller("XMLHttpController", ['$scope', '$http', '$log',
-
-    function ($scope,  $http, $log) {
  
-
-      /*
-      var person = {
+var app = angular.module("postcatApp", []);
+app.controller("XMLHttpController", ['$scope', '$http', '$log', 
+    function ($scope,  $http, $log) { 
+      /*var person = {
         name: "Brad",
         age: 35,
         address:{
@@ -15,16 +10,10 @@ app.controller("XMLHttpController", ['$scope', '$http', '$log',
           city: "Boston"
         },
         children:["Brianna", "Nicholas"]
-      }
-
+      } 
       //person = JSON.stringify(person);
-      //person = JSON.parse(person);
-
-      var people = [
-        {
-          name:"Brad",
-          age: 35
-        },
+      //person = JSON.parse(person); 
+      var people = [ 
         {
           name:"John",
           age:40
@@ -33,8 +22,7 @@ app.controller("XMLHttpController", ['$scope', '$http', '$log',
           name:"Sara",
           age:25
         }
-      ];
-
+      ]; 
       //console.log(people[1].age);
       var output = '';
       for(var i = 0;i < people.length;i++){
@@ -42,8 +30,9 @@ app.controller("XMLHttpController", ['$scope', '$http', '$log',
         output += '<li>'+people[i].name+'</li>';
       }
       document.getElementById('people').innerHTML = output;
-      */
+      */ 
 
+      // id="people"
      var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
