@@ -9,7 +9,7 @@ angular.module('postcatApp', [
   'postList',
   'dTech',
   'modalFormApp',
-  'XMLH'
+  'XMLH' 
 ]);
 
 angular.
@@ -36,6 +36,10 @@ angular.
       }) 
       .when('/d-tech', {
         template: '<d-tech></d-tech>'
+      })  
+      .when('/pi', {
+        template: '<div id="pi" style="background-color:blue;min-height:100px;"></div>',
+        controller: "PiController"
       }). 
         when('/posts/:postId', {
           template: '<post-detail></post-detail>'

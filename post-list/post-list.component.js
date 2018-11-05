@@ -8,8 +8,8 @@ angular.
     controller: ['Post',
       function postListController(Post) {
         this.posts = Post.query();
-        this.orderProp = 'cat3';
-
+        this.orderProp = 'cat3'; 
+        
         this.reader = function() { 
           var xhttp = new XMLHttpRequest();  
              xhttp.onreadystatechange = function() {
