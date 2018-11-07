@@ -39,9 +39,9 @@ module.exports = function (grunt) {
         },
         jasmine: {
             pivotal: {
-                src: 'src/*.js',
+                src: ['src/*.js','post-list/*.js'],
                 options: {
-                    specs: 'spec/*.js'
+                    specs: ['spec/*.js','post-list/*.js']
                 }
             }
         },
@@ -57,7 +57,8 @@ module.exports = function (grunt) {
             },
             all: {
                 src : [
-                    'src/*.js'
+                    'src/*.js',
+                    'post-list/*.js'
                 
                 ]
             },
@@ -66,7 +67,8 @@ module.exports = function (grunt) {
                   jshintrc: '.jshintrc'
                 },
                 src: [
-                    'src/*.js'
+                    'src/*.js',
+                    'post-list/*.js'
                 ]
               }
         },

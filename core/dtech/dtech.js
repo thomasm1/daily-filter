@@ -6,7 +6,7 @@ dTech.factory("postService", function() {
 	var post = [];
 	 
 
-	console.log(post)
+	console.log(post);
 	return {
 		getPost: function() {
 			return post;
@@ -196,9 +196,16 @@ dTech.controller("HeaderCtrl", function($scope, $location) {
 });
 
 dTech.controller("BookListCtrl", function($scope, bookService, postService) {
-	$scope.books = bookService.getBooks();
-	
+
+	$scope.add = function(book) {
+		//console.log("book: ", book);
+		postService.add(book);
+	}
+	$scope.books = bookService.getBooks(); 
+	$scope.orderProp = 'did'; 
 	$scope.addToPost = function(book) {
 		postService.addToPost(book);
 	}
+
+	
 });

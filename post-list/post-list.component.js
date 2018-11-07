@@ -8,13 +8,13 @@ angular.
     controller: ['Post',
       function postListController(Post) {
         this.posts = Post.query();
-        this.orderProp = 'cat3'; 
+        this.orderProp = 'did'; 
         
         this.reader = function() { 
           var xhttp = new XMLHttpRequest();  
              xhttp.onreadystatechange = function() {
         
-                 if (this.readyState == 4 && this.status == 200) { 
+                 if (this.readyState === 4 && this.status === 200) { 
                    var response = JSON.parse(xhttp.responseText);
                    var url = response.september;
          console.log(url);

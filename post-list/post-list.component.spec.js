@@ -6,13 +6,13 @@ describe('postList', function() {
   beforeEach(module('postList'));
 
   // Test the controller
-  describe('PhoneListController', function() {
+  describe('postListController', function() {
     var $httpBackend, ctrl;
 
     beforeEach(inject(function($componentController, _$httpBackend_) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('posts/posts.json')
-                  .respond([{title: 'Nexus S'}, {title: 'Motorola DROID'}]);
+                  .respond([{title: 'Nexus dS'}, {title: 'Motorola DROID'}]);
 
       ctrl = $componentController('postList');
     }));

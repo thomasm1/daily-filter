@@ -26,6 +26,7 @@ module.exports = function (config) {
  
       'src/*.js',  
       'spec/*.js',
+      'post-list/*.js'
  
     ],
 
