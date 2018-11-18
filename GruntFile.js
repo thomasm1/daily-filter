@@ -23,7 +23,7 @@ module.exports = function (grunt) {
               sourceMap:true
             },
             files:{
-              'dest/all.min.js':['src/app.js','src/one.js','src/two.js']
+              'dest/all.min.js':['src/main.js','src/one.js','src/two.js']
             }
           },
           t2:{

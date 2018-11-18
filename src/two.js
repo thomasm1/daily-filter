@@ -1,7 +1,7 @@
 'use strict';
 
 app.secondMethod = function(){
-  debugger;
+ // debugger;
   console.log("This is second Method");
   
 };
