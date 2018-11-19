@@ -13,6 +13,9 @@ module.exports = function (config) {
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine', 'jasmine-matchers'],
+    preprocessors: [
+
+    ],
 
     // list of files / patterns to load in the browser
     files: [
@@ -52,7 +55,9 @@ module.exports = function (config) {
     // - IE (only Windows)
     browsers: [
       'FirefoxHeadless'
+      ,'ChromeHeadless'
     ],
+
 
     customLaunchers: {
       FirefoxHeadless: {
@@ -70,14 +75,22 @@ module.exports = function (config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-jasmine-matchers',
+      'karma-coverage'
     ],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: true,
-
+    reporters: ['dots'],
     colors: true,
+    coverageReporter: {
+      dir: 'coverage/',
+      reporters: [
+        {type: 'html', subdir: 'html'}
+      ]
+    },
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
