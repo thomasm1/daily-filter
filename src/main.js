@@ -1,17 +1,3 @@
-"use strict";
-var Calculator = require("calculator");
-/**
- * Updates result in DOM element.
- * @param {string} result
- */ 
-function updateResult(result) {
-  const element = document.getElementById('result');
-
-  if (element) {
-    element.innerText = result;
-  }
-}
-
 /**
  * Calculates result for a simple mathematical expression.
  *
@@ -48,10 +34,33 @@ function calculate(inputValue) {
     case '/':
       result = calculator.divide(numberB);
       break;
-    default:
-      result = 'Operation not recognized';
   }
 
   updateResult(result);
 }
 
+/**
+ * Updates result in DOM element.
+ * @param {string} result
+ */
+function updateResult(result) {
+  const element = document.getElementById('result');
+
+  if (element) {
+    element.innerText = result;
+  }
+}
+
+/**
+ * Shows calculator version in DOM.
+ */
+function showVersion() {
+  const calculator = new Calculator(); 
+  const element = document.getElementById('version');
+
+  // element.innerText = calculator.version;
+  calculator.version
+  .then(function (version) {
+    element.innerText = version;
+  });
+}

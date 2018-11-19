@@ -12,7 +12,7 @@ module.exports = function (config) {
     basePath: '',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'jasmine-matchers'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -22,8 +22,14 @@ module.exports = function (config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js', 
+      'bower_components/angular-mocks/angular-mocks.js',  
  
+       "lib/jasmine.js" ,
+      "lib/jasmine-html.js" ,
+      "lib/boot.js" ,
+      "lib/jasmine-matchers.js" ,
+      "src/custom-matchers.js", 
+      
       'src/*.js',  
       'spec/*.js',
       'post-list/*.js'
@@ -69,7 +75,7 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
+    singleRun: true,
 
     colors: true,
 

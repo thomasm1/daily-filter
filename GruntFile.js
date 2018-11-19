@@ -23,13 +23,13 @@ module.exports = function (grunt) {
               sourceMap:true
             },
             files:{
-              'dest/all.min.js':['src/main.js','src/one.js','src/two.js']
+              'dest/all.min.js':['src/one.js','src/two.js']
             }
           },
           t2:{
             files: [{
               cwd: 'src/',
-              src:'**/*.js',
+             // src:'**/*.js',
               dest:'target/',
               expand:true,
               flatten:false,

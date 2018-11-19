@@ -5,5 +5,5 @@ function Song() {
 
 Song.prototype.persistFavoriteStatus = function(value) {
   // something complicated
-  throw new Error("not yet implemented");
+  throw new Error("Error thrown: not yet implemented");
 };

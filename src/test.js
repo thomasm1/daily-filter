@@ -1,6 +1,6 @@
 'use strict';
 
-describe('true', function() {
+describe('truethy', function() {
   it("Should be true", function () {
     expect(true).toBeTruthy();
   });

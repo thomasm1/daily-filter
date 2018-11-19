@@ -63,6 +63,42 @@ function Calculator() {
     return this.total /= number;
   };
   
-  /////////
   
-module.exports({addd, adder, Calculator});
+/**
+ * Getter that returns calculator version.
+ */
+// Object.defineProperty(Calculator.prototype, 'version', {
+//   get: function () {
+//     return '0.1';
+//   },
+//   enumerable: true,
+//   configurable: true
+// });
+        // var promise1 = new Promise(function(resolve, reject) {
+        //   setTimeout(function() {
+        //     resolve('foo');
+        //   }, 300);
+        // });
+
+        // promise1.then(function(value) {
+        //   console.log(value);
+        //   // expected output: "foo"
+        // });
+
+        // console.log(promise1);
+        // // expected output: [object Promise]
+
+
+Object.defineProperty(Calculator.prototype, 'version', {
+  get: function () {
+    return fetch('https://gist.githubusercontent.com/juanlizarazo/4b2d229ba483ca13b1a6d7bf3079dc8b/raw/228ac05e04118037be02c38d9b86945c1356a2e2/version.json')
+      .then(function (result) {
+        return result.json()
+      })
+      .then(function (json) {
+        return json.version;
+      });
+  },
+  enumerable: true,
+  configurable: true
+});
