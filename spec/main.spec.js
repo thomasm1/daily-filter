@@ -143,19 +143,6 @@ describe('main.js', function () {
     });
   });
 
-  // describe('showVersion()', function () {
-  //   it('calls calculator.version', function () {
-  //     spyOn(document, 'getElementById').and.returnValue({
-  //       innerText: null
-  //     });
-
-  //     const spy = spyOnProperty(Calculator.prototype, 'version', 'get');
-
-  //     showVersion();
-
-  //     expect(spy).toHaveBeenCalled();
-  //   });
-  // });
   describe('showVersion()', function () {
     it('calls calculator.version', function () {
       spyOn(document, 'getElementById').and.returnValue({
@@ -170,10 +157,8 @@ describe('main.js', function () {
 
       expect(spy).toHaveBeenCalled();
     });
-
-    
   });
-  
+
   // With async function declaration:
   //
   // describe('get version', function() {

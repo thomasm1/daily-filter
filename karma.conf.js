@@ -13,9 +13,9 @@ module.exports = function (config) {
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine', 'jasmine-matchers'],
-    preprocessors: [
-
-    ],
+    preprocessors: {
+      'src/*.js': ['coverage']
+    },
 
     // list of files / patterns to load in the browser
     files: [
@@ -104,3 +104,4 @@ module.exports = function (config) {
     urlRoot: '_karma_'
   });
 };
+ 

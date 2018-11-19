@@ -1,16 +1,16 @@
-describe('calculator.js', function() {
-  describe('Calculator', function() {
+describe('calculator.js', function () {
+  describe('Calculator', function () {
     let calculator;
     let calculator2;
 
-    beforeEach(function() {
+    beforeEach(function () {
       // Anything inside this block executes before
       // each spec (it) inside this describe.
       calculator = new Calculator();
       calculator2 = new Calculator();
     });
 
-    afterEach(function() {
+    afterEach(function () {
       // Anything inside this block executes after
       // each spec (it) inside this describe.
     });
@@ -23,7 +23,8 @@ describe('calculator.js', function() {
     it('can be instantiated', function () {
       jasmine.addMatchers(customMatchers);
 
-      expect(calculator).toBeCalculator(); 
+      expect(calculator).toBeCalculator();
+      expect(calculator).toBeTruthy();
       expect(calculator2).toBeTruthy();
       expect(calculator).toEqual(calculator2);
       expect(calculator.constructor.name).toContain('Calc');
@@ -36,7 +37,10 @@ describe('calculator.js', function() {
     it('has common operations', function () {
       const calculator = new Calculator();
 
-      expect(calculator.add).toBeDefined(); // or not.toBeUndefined();  
+      expect(calculator.add).toBeDefined(); // or not.toBeUndefined();
+      expect(calculator.subtract).toBeDefined();
+      expect(calculator.multiply).toBeDefined();
+      expect(calculator.divide).toBeDefined();
     });
 
     it('can overwrite total', function () {
@@ -46,13 +50,8 @@ describe('calculator.js', function() {
       expect(calculator.total).toBeNull();
     });
 
-
-
-
-
-    
-    describe('add()', function() { 
-      it('should add numbers to total', function() {
+    describe('add()', function () {
+      it('should add numbers to total', function () {
         calculator.add(5);
 
         expect(calculator.total).toBe(5);
@@ -69,8 +68,8 @@ describe('calculator.js', function() {
       });
     });
 
-    describe('subtract()', function() {
-      it('should subtract numbers from total', function() {
+    describe('subtract()', function () {
+      it('should subtract numbers from total', function () {
         calculator.total = 30;
         calculator.subtract(5);
 
@@ -78,8 +77,8 @@ describe('calculator.js', function() {
       });
     });
 
-    describe('multiply()', function() {
-      it('should multiply total by number', function() {
+    describe('multiply()', function () {
+      it('should multiply total by number', function () {
         calculator.total = 100;
         calculator.multiply(2);
 
@@ -100,8 +99,8 @@ describe('calculator.js', function() {
       });
     });
 
-    describe('divide()', function() {
-      it('should divide total by number', function() {
+    describe('divide()', function () {
+      it('should divide total by number', function () {
         calculator.total = 200;
         calculator.divide(2);
 
@@ -119,9 +118,7 @@ describe('calculator.js', function() {
           expect(version).toBe('0.1');
           done();
         });
-
       });
-    }); // end versionn fetch
-
+    });
   });
 });

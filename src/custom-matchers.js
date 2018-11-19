@@ -1,5 +1,3 @@
-'use strict';
-
 const customMatchers = {
   toBeCalculator: function () {
     return {
@@ -17,6 +15,6 @@ const customMatchers = {
 
         return result;
       }
-    };
+    }
   }
 };
