@@ -9336,7 +9336,7 @@ div.panel-body {
 
 .panel-title {
   background-color: lightsteelblue;
-  background-image: url("wellsfar/bluechipTileT8.png"); }
+  background-image: url("img/bluechipTileT8.png"); }
 
 .view {
   border: solid transparent 1px; }
@@ -9407,7 +9407,7 @@ p.mb4card {
   border: 0px solid red;
   box-shadow: 0px 10px 50px silver;
   background-color: rgba(0, 0, 200, 0.5);
-  background-image: url("../img/MaestasReykjavikBanner.jpg");
+  background-image: url("img/MaestasReykjavikBanner.jpg");
   border-radius: 0px;
   border: 0px solid red;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3); }
@@ -9466,7 +9466,7 @@ div#map0 {
   font-size: 1.02em;
   font-family: Monoton;
   background-color: transparent;
-  background-image: url("../img/RBTriomphe.png"); }
+  background-image: url("img/RBTriomphe.png"); }
 
 .node rect,
 .node circle,
@@ -10194,3 +10194,121 @@ a.trans-back {
   .map {
     max-width: 50%;
     border: solid .5px white; } }
+
+    h1 {
+      border-bottom: 1px solid gray;
+      margin-top: 0;
+    }
+    
+    /* View: Post list */
+    .posts {
+      list-style: none;
+    }
+    
+    .posts li {
+      clear: both;
+      height: 115px;
+      padding-top: 15px;
+    }
+    
+    .thumb {
+      float: left;
+      height: 100px;
+      margin: -0.5em 1em 1.5em 0;
+      padding-bottom: 1em;
+      width: 100px;
+    }
+    
+    /* View: Post detail */
+    .post {
+      background-color: white;
+      display: none;
+      float: left;
+      height: 300px;
+      margin-bottom: 2em;
+      margin-right: 3em;
+      padding: 2em;
+      width: 300px;
+    }
+    
+    .post:first-child {
+      display: block;
+    }
+    
+    .post-images {
+      background-color: white;
+      float: left;
+      height: 450px;
+      overflow: hidden;
+      position: relative;
+      width: 450px;
+    }
+    
+    .post-thumbs {
+      list-style: none;
+      margin: 0;
+    }
+    
+    .post-thumbs img {
+      height: 100px;
+      padding: 1em;
+      width: 100px;
+    }
+    
+    .post-thumbs li {
+      background-color: white;
+      border: 1px solid black;
+      cursor: pointer;
+      display: inline-block;
+      margin: 1em;
+    }
+    
+    .specs {
+      clear: both;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .specs dt {
+      font-weight: bold;
+    }
+    
+    .specs > li {
+      display: inline-block;
+      vertical-align: top;
+      width: 200px;
+    }
+    
+    .specs > li > span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+     
+    .blue {
+      color:blue;
+    }
+    #readers  {
+      background-color:rgba(40, 54, 255, 0.247);
+      width:325px;
+      min-width:200px;
+      max-height:500px; 
+      padding:5px; 
+      overflow-y:scroll;
+    
+    }  
+    #readers h1,h2,h3,h4,h5 {
+    text-align:center;
+    }
+    #readerz-div {
+      background-color:rgba(61, 70, 206, 0.247);
+      width:80%;
+      min-width:350px; 
+      font-size:1rem;
+      max-height:500px;
+       height: 0px;
+      padding:5px;
+      border-radius:10px; 
+      overflow-y:scroll;
+    
+    } 
