@@ -20,6 +20,9 @@ angular.
 
       $routeProvider	 
       .when('/', {
+        templateUrl: 'views/hexagon.html'
+      }) 
+      .when('/home', {
         template: '<post-list></post-list>'
       })
       .when("/books", {
