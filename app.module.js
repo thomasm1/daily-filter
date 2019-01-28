@@ -7,7 +7,7 @@ angular.module('postcatApp', [
   'core',
   'postDetail',
   'postList',
-  'dTech',
+  'dTech', 
   'modalFormApp',
   'XMLH' 
 ]);
@@ -20,7 +20,7 @@ angular.
 
       $routeProvider	 
       .when('/', {
-        templateUrl: 'views/hexagon.html'
+        templateUrl: 'views/layoutHex.html'
       }) 
       .when('/home', {
         template: '<post-list></post-list>'
