@@ -10,18 +10,20 @@
 $AWSRegionA = "us-east-1"
 $amiRegionA = "ami-48351d32" #aws-elasticbeanstalk-amzn-2017.09.1.x86_64-ecs-hvm-201801192255
 $AWSRegionB = "us-west-1"
-$amiRegionB = "ami-f7383a97" #aws-elasticbeanstalk-amzn-2017.09.1.x86_64-ecs-hvm-201801180451
+$amiRegionB = "ami-1fe0e47f" #aws-elasticbeanstalk-amzn-2017.09.1.x86_64-ecs-hvm-201801180451
 
 # Search for AMIs by name
-$amiName = "aws-elasticbeanstalk-amzn-2017.09.1.x86_64-ecs-hvm-2018011*"
-Get-EC2ImageByName -Region "EU-west-2" -Name $amiName | ft -Property Name,ImageId
+$amiName = "aws-elasticbeanstalk-amzn-2017.09.1.x86_64-ecs-hvm-201801192255*"
+#Get-EC2ImageByName -Region "US-east-1" -Name $amiName | ft -Property Name,ImageId
+#<===uncomment!
+
 
 # Set your IP subnet for SSH access
-$myIP = "24.96.154.168/29"
+$myIP = "10.0.0.167"  #73.26.10.180/32
 
 # Set the name of your SSH keypair
-$regionAKeyname = "ccnetkeypair"
-$regionBKeyname = "ccnetkeypair"
+$regionAKeyname = "dailyfilter" 
+$regionBKeyname = "dailyfilter"
 
 # Get existing keypairs
 Get-EC2KeyPair -Region "us-east-1"
