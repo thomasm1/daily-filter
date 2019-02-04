@@ -5,7 +5,7 @@
 
 # Create reusable delegation set
 $delegationset = New-R53ReusableDelegationSet -CallerReference (Get-Random)
-Get-R53ReusableDelegationSetList
+Get-R53ReusableDelegationSetList # List of name servers
 
 # View nameservers only
 $delegationset.DelegationSet.NameServers
@@ -14,14 +14,14 @@ $delegationset.DelegationSet.NameServers
 $dsid = $delegationset.DelegationSet.Id
 
 # Configure zone name
-$zonename = "benpiper.host."
+$zonename = "dailytechfilter.net."
 
 # Create public hosted zone
 $zone = New-R53HostedZone -Name $zonename -DelegationSetId $dsid -CallerReference (Get-Random)
 
 # View zone properties
 $zone.HostedZone
-
+ 
 # View all records
 $firstns = $zone.DelegationSet.NameServers[0]
 $firstns
