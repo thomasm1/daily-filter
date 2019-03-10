@@ -1,0 +1,115 @@
+<style>
+body{
+  font-family: 'Open Sans', arial, sans-serif;
+  background-image:url('dist/img/bluechipTileT9.png');
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+
+</style>
+<div id="HexLayout">
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet'
+    type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="dist/hexagons.css">
+  <ul id="categories" class="clr">
+    
+    <li>
+      <div class="selectStyle" xg-controller="masterController as master">
+        <img src="dist/img/tmm-orange.png" alt="" />
+        <h1>Category: {{master.familiarName}}</h1>
+        <p class="sliderParagraph">
+          Article: <select id="selectObject" xg-model="master.selectedObject" xg-options="object.name for object in master.masterObjects"></select>
+          <br><br> 
+          Read Length: <select id="selectAction" xg-model="master.selectedAction" xg-options="masterAction.actionName for masterAction in master.masterActions"></select>
+          &nbsp;<button class="dogButtonStyle" id="buttonMasterAction" xg-click="master.selectedAction.actionFunc(master.selectedObject)">Go</button>
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="selectStyle" xg-controller="dogDomainController as domainController">
+          <img src="dist/img/tmm-orange.png" alt="tmm-logo" />
+        
+        <h1>Twython Space API</h1>
+        <p class="sliderParagraph">
+          NASA <select xg-model="domainController.place" xg-options="dogPlace.name for dogPlace in domainController.places"
+            xg-change="domainController.domainSelected(domainController.place)">
+                  </select><br>
+          <br>
+        </p>
+      </div>
+    </li>
+    <li class="pusher"></li>
+    <li>
+      <div xg-controller="dogController as dog">
+         <img src="dist/img/tmm-purple.png" alt="" />
+         <h3> Objects:</h3> 
+        <br>  ECRIVAIN
+        <br>
+        <div id="barkButtonDiv">
+          <button class="dogButtonStyle" id="barkButton" xg-click="dog.testBark()">Write</button>
+        </div>
+        <br>
+        <div>
+          <br> 
+          <textarea id="dogTextArea" xg-model="dog.blogContent"></textarea>
+        </div>
+        <br>
+        
+      </div>
+    </li>
+    <li>
+      <div>
+        <img src="dist/img/tmm-purple.png" alt="" />
+      </div>
+    </li>
+    <li>
+      <div class="selectStyle" xg-controller="roverPhotosController as roverController">
+       
+  <img src="dist/img/tmmpurple.png" alt="" />
+        <h1>Mars Rover</h1>
+        <p class="sliderParagraph">
+          Rover Camera: <select id="selectCamera" xg-model="roverController.roverCamera" xg-options="camera.full_name for camera in roverController.cameras"></select><br><br>
+          &nbsp<button class="dogButtonStyle" id="buttonGetPhotos" xg-click="roverController.getPhotos(roverController.roverCamera.name)">Rover Photos</button>
+        Domain: <select xg-model="domainController.place" xg-options="dogPlace.name for dogPlace in domainController.places"
+            xg-change="domainController.domainSelected(domainController.place)">
+                  </select><br> 
+          <br>-->
+        </p>
+      </div>
+    </li>
+ 
+
+    <li>
+    
+      <div class="selectStyle" xg-controller="peopleController as peopleCtrl">
+        <img src="dist/img/logo.png" alt="" />
+        <h1>Others  </h1>
+        <p class="sliderParagraph">
+          Person: <select id="selectPerson" xg-model="peopleCtrl.selectedPerson" xg-options="person.familiarName for person in peopleCtrl.people"></select>
+          <br><br>          
+          Action: <select id="selectPersonAction" xg-model="peopleCtrl.selectedAction" xg-options="personAction.actionName for personAction in peopleCtrl.personActions"></select>
+          <br><br>
+          <button class="dogButtonStyle" id="personActionButton" xg-click="peopleCtrl.selectedAction.actionFunc(peopleCtrl.selectedPerson)">Perform Action</button>
+        </p>
+      </div>
+    </li>
+    <li>
+    
+      <div class="selectStyle" xg-controller="otherAnimalController as otherAnimalCtrl">
+        <img src="dist/img/tmm-blue.png" alt="" />
+        <h1>Other Objects</h1>
+        <p class="sliderParagraph">
+          Objects: <select id="selectAnimal" xg-model="otherAnimalCtrl.selectedAnimal" xg-options="animal.familiarName for animal in otherAnimalCtrl.otherAnimals"
+            xg-change="otherAnimalCtrl.performAction()">
+                  </select><br>
+          <br>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
