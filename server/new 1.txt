@@ -1,0 +1,5 @@
+M.A. (Dec. 2015)  Sociology. University of New Mexico, Albuquerque NM
+B.A. (Dec. 2001)   History (Cum laude).  University of New Mexico, Albuquerque NM Employment
+App Developer  May 2018 -  Present, Rural Sourcing Inc., Contract title: Software Engineer App Developer July 2017 -  Jan. 2018, Xpansiv Data Systems, (Front-End Contractor) Teaching Assistant Fall 2016, Département de Sociologie, (as PhD), l’Université de Montréal, Québec
+
+I specialize in latest technologies, with a Masters-level understanding of data analytics and visualization. I have  7 years of experience with web frameworks, libraries, task-runners and cloud proficiency including AWS Lambda. My data analysis experience includes both qualitative and quantitative analytics, and I specialize in  non-relational JSON and XML data-related apps using R, Python, and JavaScript, and relational proficiency including MySQL and PostgreSQL. Agile/SCRUM Methodology.
