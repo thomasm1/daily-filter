@@ -4,10 +4,11 @@ angular.
   module('core.post').
   factory('Post', ['$resource',
     function($resource) {
-      return $resource('posts/:postId.json', {}, {
+ //     return $resource('posts/:postId.json', {}, {
+  return $resource('https://s3.amazonaws.com/tmm-nov/posts/september.json', [], { 
         query: {
           method: 'GET',
-          params: {postId: 'posts'},
+        //  params: {postId: '1'},
           isArray: true
         }
       });

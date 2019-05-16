@@ -16,7 +16,12 @@ angular.
           self.mainImageUrl = imageUrl;
         };
  
-      }
+
+
+
+
+        
+      } // end PostDetailController($routeParams, Post)
       
     ]
   });
