@@ -1,5 +1,0 @@
-{
-  "ExperimentalFeatures": {
-    "ExpTest.FeatureOne": [ "test/powershell/engine/ExperimentalFeature/ExperimentalFeature.Basic.Tests.ps1" ]
-  }
-}

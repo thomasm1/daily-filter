@@ -1,0 +1,55 @@
+p.panel-body {
+  font-family:'Monoton';
+  background-color: #00b1ec44;
+background-image: url('../img/MaestasReykjavikBanner.jpg'); 
+}     
+     #form {
+       
+  background-color: #00b1ec44;
+  background-image: url('../img/MaestasReykjavikBanner.jpg'); 
+     }
+     #about {
+          margin: 5px 0px 25px;
+      }
+
+      #about h4 {
+          padding: 15px;
+      }
+
+      #about:target {
+          z-index: 15;
+          background-color: rgb(36, 89, 133);
+      }
+
+      #main {
+          float: right;
+          color: white;
+          max-height: 40px;
+          max-width: 60px;
+          z-index: 2;
+          opacity: .6;
+      }
+
+      .bu {
+          width: 35px;
+          padding: 1px;
+          margin-top: 3px;
+          background-color: #503fee !important;
+          color:white;
+          opacity: .7;
+      }
+
+       #window input {
+          color: white !important;
+          width: 160px;
+          font-size: 1.5em;
+          font-family: 'Roboto';
+          opacity: .9; 
+          margin-top: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 5px 5px 3px;
+          height: 30px;
+          line-height: 1.3em;
+
+      }

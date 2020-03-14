@@ -27,15 +27,15 @@ angular.
       })
       .when("/books", {
         templateUrl: "views/book-list.html",
-        controller: "BookListCtrl"
+        controller: "BookListCtrl" // core/dtech/dtech.js
       }) 
       .when("/books", {
         templateUrl: "views/book-list.html",
-        controller: "BookListCtrl"
+        controller: "BookListCtrl" // core/dtech/dtech.js
       }) 
       .when("/poster", {
         templateUrl: "views/post-list.html",
-        controller: "PostListCtrl"
+        controller: "PostListCtrl" // core/dtech/dtech.js
       }) 
       .when('/d-tech', {
         template: '<d-tech></d-tech>'
@@ -47,6 +47,8 @@ angular.
         when('/posts/:postId', {
           template: '<post-detail></post-detail>'
         }).
-        otherwise('/');
+        otherwise('/', {
+        templateUrl: 'views/layoutHex.html'
+      });
     }
   ]);

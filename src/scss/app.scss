@@ -1,0 +1,26 @@
+
+.yellow {
+    color:yellow 
+}
+.ourdailytechblog {
+      width:260px;
+      height:120px;
+      color:white;
+      font-size:1.5em;
+      font-family:Monoton;
+      background-color:transparent;
+      background-image: url('dist/img/RBTriomphe.png');
+    }
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Monoton:100,200,300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,600,600i,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+@import "d3";   
+@import "customVariables";
+@import "functions";
+@import "bootstrap3";  
+@import "application";
+@import "calc"; 
+@import "custom";  
+@import "marsreader";

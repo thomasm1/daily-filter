@@ -1,7 +1,9 @@
 <div  ng-controller="PostListCtrl" id="bookListWrapper">
 
 
-	<div ng-controller="TodoListController">
+	<div >
+			
+			
 			<style>
 				 * {
 					 list-style-type:none;
@@ -23,8 +25,27 @@
 					min-height: 300px;
 				} 
 
-				</style>
-				<h2>Reading List</h2>
+				</style> 
+	
+<!-- <div class="row media">
+    <div class="page-header">
+        <h2><a href="#/" style="color:white;">TMSearch Film ::</h2><h3><br /> OMDB-API</a></h3>
+
+      </div>
+      <div ng-controller="SearchController">
+        <form class="form-inline-lg" ng-submit="search()">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Film title..." ng-model="query" 
+            ng-keyup="keyup()" ng-keydown="keydown()">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="search()">_Search films_</button>
+            </span>
+          </div>
+        </form>
+      </div>
+</div>  -->
+
+				<h2>Reading</h2>
 				<div class="toAdd" ng-controller="TodoListController as todoList">
 				
 					<div>
