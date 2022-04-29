@@ -67,7 +67,7 @@
     "url-loader": "^0.5.5"
   },
   "dependencies": {
-    "async": "2.0.0-rc.6",
+    "async": "2.6.4",
     "bcrypt-nodejs": "0.0.3",
     "jasmine-core": "^3.3.0",
     "lodash": "4.12.0"
